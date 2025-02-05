@@ -700,28 +700,29 @@ class _DatePickerState extends State<DatePicker> {
         fontWeight: FontWeight.bold,
       ),
       dynamicCalendarRows: true,
-      modePickerBuilder: ({required monthDate, isMonthPicker}) {
-        return Center(
-          child: Container(
-            padding: const EdgeInsets.all(5),
-            margin: const EdgeInsets.symmetric(horizontal: 5),
-            decoration: BoxDecoration(
-              color: isMonthPicker == true ? Colors.red : Colors.teal[800],
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Text(
-              isMonthPicker == true
-                  ? getLocaleShortMonthFormat(const Locale('ar'))
-                      .format(monthDate)
-                  : monthDate.year.toString(),
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        );
-      },
+      // modePickerBuilder: ({required monthDate, isMonthPicker}) {
+      //   return Center(
+      //     child: Container(
+      //       padding: const EdgeInsets.all(5),
+      //       margin: const EdgeInsets.symmetric(horizontal: 5),
+      //       decoration: BoxDecoration(
+      //         color: isMonthPicker == true ? Colors.red : Colors.teal[800],
+      //         borderRadius: BorderRadius.circular(5),
+      //       ),
+      //       child: Text(
+      //         isMonthPicker == true
+      //             ? getLocaleShortMonthFormat(const Locale('ar'))
+      //                 .format(monthDate)
+      //             : monthDate.year.toString(),
+      //         style: const TextStyle(
+      //           color: Colors.white,
+      //           fontWeight: FontWeight.bold,
+      //         ),
+      //       ),
+      //     ),
+      //   );
+      // },
+
       weekdayLabelBuilder: ({required weekday, isScrollViewTopHeader}) {
         if (weekday == DateTime.wednesday) {
           return const Center(
@@ -1007,5 +1008,18 @@ class _DatePickerState extends State<DatePicker> {
         ],
       ),
     );
+  }
+}
+
+class Todo {
+  final String who;
+  final String what;
+
+  const Todo(this.who, this.what);
+
+  ///[doSomething]
+  @Todo('Dash', 'Implement this function')
+  void doSomething() {
+    print('Do something');
   }
 }

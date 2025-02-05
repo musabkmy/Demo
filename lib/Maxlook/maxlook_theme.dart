@@ -102,6 +102,7 @@ class GlobalThemData {
       color: darkColor,
       fontSize: 16.0,
       fontWeight: FontWeight.normal,
+      // fontStyle: FontStyle.italic
     ),
     labelSmall: TextStyle(
       color: darkColor,
